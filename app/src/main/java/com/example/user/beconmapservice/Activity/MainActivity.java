@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         partButtons[6] = (Button) findViewById(R.id.part7);
         partButtons[7] = (Button) findViewById(R.id.part8);
 
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < partButtons.length; i++) {
             partButtons[i].setOnClickListener(onClickListener);
         }
 
