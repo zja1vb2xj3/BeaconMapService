@@ -1,6 +1,5 @@
-package com.example.user.beconmapservice;
+package com.example.user.beconmapservice.Model;
 
-import android.graphics.Bitmap;
 
 /**
  * Created by user on 2017-09-28.
