@@ -7,7 +7,6 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -37,11 +36,11 @@ public class MainActivity extends AppCompatActivity {
         partButtons[6] = (Button) findViewById(R.id.part7);
         partButtons[7] = (Button) findViewById(R.id.part8);
 
-        for(int i=0; i<8; i++){
+        for (int i = 0; i < 8; i++) {
             partButtons[i].setOnClickListener(onClickListener);
         }
 
-    }
+    }//end onCreate
 
     private ButtonModel[] buttonModels;
 
@@ -59,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         buttonModels[5] = new ButtonModel("모니터 코너", "가격 : 150.000");
         buttonModels[6] = new ButtonModel("청소기 코너", "가격 : 100.000");
         buttonModels[7] = new ButtonModel("세탁기 코너", "가격 : 1.000.000");
-    }
+    }//end onResume
 
 
     View.OnClickListener onClickListener = new View.OnClickListener() {
@@ -105,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
         }//end onClick
     };//end onClickListener
 
-    private void createListDialog(Drawable icon, ButtonModel buttonModel){
+    private void createListDialog(Drawable icon, ButtonModel buttonModel) {
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         final LayoutInflater inflater = LayoutInflater.from(this);
         final View view = inflater.inflate(R.layout.dialog_items, null);
@@ -123,17 +122,18 @@ public class MainActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
 
         builder.setTitle("선택한 위치 정보")
-        .setView(view)
-        .setCancelable(false)
-        .setPositiveButton("확인", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                Toast.makeText(getApplicationContext(), "확인 버튼을 클릭하셨습니다.", Toast.LENGTH_SHORT).show();
-            }
-        });
+                .setView(view)
+                .setCancelable(false)
+                .setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(getApplicationContext(), "확인 버튼을 클릭하셨습니다.", Toast.LENGTH_SHORT).show();
+                    }
+                });
 
         AlertDialog dialog = builder.create();
         dialog.show();
+
     }//end createListDialog
 
 }//end MainActivity
