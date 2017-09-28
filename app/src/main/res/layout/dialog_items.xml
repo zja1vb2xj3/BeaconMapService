@@ -7,7 +7,9 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/iconImage"/>
+        android:id="@+id/iconImage"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"/>
 
     <ListView
         android:layout_width="match_parent"
