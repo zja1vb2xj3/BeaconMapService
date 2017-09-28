@@ -48,6 +48,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
+        /**
+         * buttonModels 비콘에 저장된 데이터가 있다는 가정.
+         */
         buttonModels = new ButtonModel[8];
 
         buttonModels[0] = new ButtonModel("카메라 코너", "가격 : 500.000");
@@ -60,43 +63,44 @@ public class MainActivity extends AppCompatActivity {
         buttonModels[7] = new ButtonModel("세탁기 코너", "가격 : 1.000.000");
     }//end onResume
 
-
+    /**
+     * OnClickListener interface 변수
+     */
     View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
 
             switch (view.getId()) {
-
                 case R.id.part1:
-                    createListDialog(getResources().getDrawable(R.drawable.camera_icon), buttonModels[0]);
+                    createCustomDialog(getResources().getDrawable(R.drawable.camera_icon), buttonModels[0]);
                     break;
 
                 case R.id.part2:
-                    createListDialog(getResources().getDrawable(R.drawable.gasrange_icon), buttonModels[1]);
+                    createCustomDialog(getResources().getDrawable(R.drawable.gasrange_icon), buttonModels[1]);
                     break;
 
                 case R.id.part3:
-                    createListDialog(getResources().getDrawable(R.drawable.humidifier_icon), buttonModels[2]);
+                    createCustomDialog(getResources().getDrawable(R.drawable.humidifier_icon), buttonModels[2]);
                     break;
 
                 case R.id.part4:
-                    createListDialog(getResources().getDrawable(R.drawable.iron_icon), buttonModels[3]);
+                    createCustomDialog(getResources().getDrawable(R.drawable.iron_icon), buttonModels[3]);
                     break;
 
                 case R.id.part5:
-                    createListDialog(getResources().getDrawable(R.drawable.microwaverange_icon), buttonModels[4]);
+                    createCustomDialog(getResources().getDrawable(R.drawable.microwaverange_icon), buttonModels[4]);
                     break;
 
                 case R.id.part6:
-                    createListDialog(getResources().getDrawable(R.drawable.monitor_icon), buttonModels[5]);
+                    createCustomDialog(getResources().getDrawable(R.drawable.monitor_icon), buttonModels[5]);
                     break;
 
                 case R.id.part7:
-                    createListDialog(getResources().getDrawable(R.drawable.scavenger_icon), buttonModels[6]);
+                    createCustomDialog(getResources().getDrawable(R.drawable.scavenger_icon), buttonModels[6]);
                     break;
 
                 case R.id.part8:
-                    createListDialog(getResources().getDrawable(R.drawable.washingmachine_icon), buttonModels[7]);
+                    createCustomDialog(getResources().getDrawable(R.drawable.washingmachine_icon), buttonModels[7]);
                     break;
 
 
@@ -104,7 +108,12 @@ public class MainActivity extends AppCompatActivity {
         }//end onClick
     };//end onClickListener
 
-    private void createListDialog(Drawable icon, ButtonModel buttonModel) {
+    /**
+     * 커스텀 다이얼로그 생성
+     * @param icon R.drawable icon
+     * @param buttonModel buttonModels array data
+     */
+    private void createCustomDialog(Drawable icon, ButtonModel buttonModel) {
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         final LayoutInflater inflater = LayoutInflater.from(this);
         final View view = inflater.inflate(R.layout.dialog_items, null);
