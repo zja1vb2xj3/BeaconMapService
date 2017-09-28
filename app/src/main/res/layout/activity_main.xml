@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.user.beconmapservice.MainActivity"
+    android:gravity="center">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:gravity="center_horizontal">
+            <Button
+                android:text="part1"
+                android:id="@+id/part1"
+                android:layout_marginRight="50dp"
+
+                />
+            <Button
+                android:text="part2"
+                android:id="@+id/part2"
+                />
+        </TableRow>
+
+        <TableRow
+            android:gravity="center_horizontal">
+            <Button
+                android:text="part3"
+                android:id="@+id/part3"
+                android:layout_marginRight="50dp"
+                />
+            <Button
+                android:text="part4"
+                android:id="@+id/part4"
+                />
+        </TableRow>
+
+        <TableRow
+            android:gravity="center_horizontal">
+            <Button
+                android:text="part5"
+                android:id="@+id/part5"
+                android:layout_marginRight="50dp"
+                />
+            <Button
+                android:text="part6"
+                android:id="@+id/part6"
+                />
+        </TableRow>
+
+        <TableRow
+            android:gravity="center_horizontal">
+            <Button
+                android:text="part7"
+                android:id="@+id/part7"
+                android:layout_marginRight="50dp"
+                />
+            <Button
+                android:text="part8"
+                android:id="@+id/part8"
+                />
+        </TableRow>
+
+    </TableLayout>
+
+</RelativeLayout>
